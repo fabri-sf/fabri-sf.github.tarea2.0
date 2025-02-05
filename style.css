@@ -1,0 +1,204 @@
+/*  body */
+body {
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  background-color: lightpink;
+  font-family: Arial, sans-serif;
+}
+
+#contenedor-instagram {
+  position: relative; /* Permite posicionamiento relativo */
+  background-color: violet;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Titulo {
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin: 0;
+}
+
+.Interaccion {
+  color: bisque;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+
+/* Botón de acceso fijo */
+#interaccion-instagram {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* --------- FLOAT Y CLEAR --------- */
+
+.usos-instagram {
+  list-style: none;
+  padding: 20px 0; /* Aumentamos el padding superior e inferior */
+  margin: 20px 0;
+  border: 2px solid black;
+  overflow: hidden; /* Contiene los elementos flotantes */
+  min-height: 100px; /* Aumentamos la altura del contenedor */
+}
+
+.usos-instagram li {
+  float: left;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative; /* Para el badge de notificación */
+}
+
+#clear-float {
+  clear: both;
+  height: 1px;
+  margin-bottom: 20px;
+}
+
+/* --------- Z-INDEX Y CAPAS --------- */
+.feature-card {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.overlay-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.feature-card:hover .overlay-info {
+  opacity: 1;
+}
+
+/* Estilos para elementos generales */
+img {
+  max-width: 50px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Estilos para la tabla */
+#tabla-comparativa table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+#tabla-comparativa th,
+#tabla-comparativa td {
+  padding: 10px;
+  text-align: left;
+  border: 3px solid black;
+}
+
+/* Estilos para el diálogo */
+dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+dialog::backdrop {
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Estilos para secciones */
+section {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Estilos para párrafos y texto */
+p {
+  display: block;
+  padding: 10px;
+  border: 3px solid black;
+  margin-top: 10px;
+}
+
+span {
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* Estilos para el creador */
+#acerca-creator {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+address {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/*  Flex Container */
+.usos-instagram {
+  display: flex;
+  flex-wrap: wrap; /* Los elementos se envuelven si no caben en una fila */
+  justify-content: space-around; /* Distribuye los elementos con espacio alrededor */
+  padding: 20px 0;
+  margin: 20px 0;
+  border: 2px solid black;
+  min-height: 100px;
+}
+
+/* Flex Items  */
+.usos-instagram li {
+  display: flex;
+  flex-direction: column; /* Los íconos y texto se apilan verticalmente */
+  align-items: center; /* Centra los elementos */
+  margin: 10px;
+  flex: 1 1 150px; /* Los elementos pueden crecer, reducirse */
+}
+
+/* Aseguramos que las imágenes no se desborden */
+.usos-instagram img {
+  max-width: 100px; /* Hacemos que las imágenes no se hagan más grandes de 100px */
+  height: auto;
+}
+
+/* Responsive design: Cambiar el layout en pantallas pequeñas */
+@media (max-width: 768px) {
+  .usos-instagram {
+    flex-direction: column; /* Los elementos se alinean verticalmente en pantallas pequeñas */
+    align-items: center; /* Centrar los elementos */
+  }
+}
